@@ -1,6 +1,8 @@
 ﻿@page
+@using Asp_Core_Identity.Models
 @model Asp_Core_Identity.Pages.Account.AddUserClaimModel
 @{
+    int index = 0;
 }
 
 
@@ -9,9 +11,15 @@
     <div class="form-group">
         <input type="hidden" name="Id" value="@Model.Id" />
     </div>
-    <div class="form-group">
-        <lable>@Model.Id</lable>
-    </div>
+
+    @for (int i = 0; i < Model.Perrmisions.Count; i++)
+    {
+        <lable>@Model.Perrmisions[i].Name</lable>
+        <input type="checkbox" asp-for="@Model.Perrmisions[i].IsCkeck" />
+        <input type="hidden"  asp-for="@Model.Perrmisions[i].Name" />
+        index++;
+    }
+
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>

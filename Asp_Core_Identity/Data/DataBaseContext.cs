@@ -1,4 +1,5 @@
-﻿using Asp_Core_Identity.Models.Entities;
+﻿using Asp_Core_Identity.Models;
+using Asp_Core_Identity.Models.Entities;
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -13,7 +14,7 @@ namespace Asp_Core_Identity.Data
         {
 
         }
-
+        public DbSet<Perrmisions> Perrmisions { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<IdentityUserLogin<string>>().HasKey(x=>new { x.ProviderKey,x.LoginProvider});

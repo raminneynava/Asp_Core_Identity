@@ -37,16 +37,18 @@ namespace Asp_Core_Identity
               .AddRoles<Role>()
               .AddErrorDescriber<CustomIdentityError>();
 
-
             services.AddAuthorization(opt =>
             {
                 opt.AddPolicy("Admin", policy =>
                 {
                     policy.RequireClaim("Admin");
+                }); 
+                opt.AddPolicy("AdminInsert", policy =>
+                {
+                    policy.RequireClaim("AdminInsert");
                 });
+
             });
-
-
             services.Configure<IdentityOptions>(opt =>
             {
                 opt.User.RequireUniqueEmail = true;
