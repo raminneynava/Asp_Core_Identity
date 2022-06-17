@@ -1,0 +1,30 @@
+﻿@page
+@model Asp_Core_Identity.Pages.Account.AddUserRoleModel
+@{
+}
+<h1>AddUserRole</h1>
+
+<h4>AddUserRoleDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddUserRole">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="adduser.Id" type="hidden" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="adduser.Roles" class="control-label"></label>
+                <select asp-for="adduser.Roles" asp-items="Model.adduser.Roles" class="form-control"></select>
+                <span asp-validation-for="adduser.Roles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

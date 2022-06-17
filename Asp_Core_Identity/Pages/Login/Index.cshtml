@@ -1,0 +1,20 @@
+﻿@page
+@model Asp_Core_Identity.Pages.Login.IndexModel
+@{
+}
+<form asp-page="create" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input value="@Model.Login.ReturnUrl" type="hidden" name="Login.ReturnUrl" />
+    <div class="form-group mb-3">
+        <label asp-for="Login.UserName"> </label>
+        <input type="text" class="form-control" asp-for="Login.UserName">
+        <span asp-validation-for="Login.UserName" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Login.Password"> </label>
+        <input class="form-control" asp-for="Login.Password">
+        <span asp-validation-for="Login.Password" class="text-danger"></span>
+    </div>
+    <input type="submit" name="time" value="ورود" class="btn btn-primary">
+    <a asp-page="index" class="btn btn-info">برگشت به لیست</a>
+</form>

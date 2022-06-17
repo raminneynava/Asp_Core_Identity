@@ -1,0 +1,34 @@
+﻿@page
+@model Asp_Core_Identity.Pages.Register.IndexModel
+@{
+}
+<form asp-page="create" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group mb-3">
+        <label asp-for="register.Fullname"> </label>
+        <input type="text" class="form-control" asp-for="register.Fullname">
+        <span asp-validation-for="register.Fullname" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="register.Email"> </label>
+        <input type="text" class="form-control" asp-for="register.Email">
+        <span asp-validation-for="register.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="register.Password"> </label>
+        <input class="form-control" asp-for="register.Password">
+        <span asp-validation-for="register.Password" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="register.ConfirmPassword"> </label>
+        <input  class="form-control" asp-for="register.ConfirmPassword">
+        <span asp-validation-for="register.ConfirmPassword" class="text-danger"></span>
+    </div>
+    <input type="submit" name="time" value="ثبت" class="btn btn-primary">
+    <a asp-page="index" class="btn btn-info">برگشت به لیست</a>
+</form>
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+ }
+}

@@ -1,0 +1,19 @@
+﻿@page
+@model Asp_Core_Identity.Pages.Account.CreateRoleModel
+@{
+}
+<form asp-page="create" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group mb-3">
+        <label asp-for="Role.Name"> </label>
+        <input type="text" class="form-control" asp-for="Role.Name">
+        <span asp-validation-for="Role.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Role.Description"> </label>
+        <input class="form-control" asp-for="Role.Description">
+        <span asp-validation-for="Role.Description" class="text-danger"></span>
+    </div>
+    <input type="submit" name="time" value="submit" class="btn btn-primary">
+    <a asp-page="index" class="btn btn-info">برگشت به لیست</a>
+</form>
